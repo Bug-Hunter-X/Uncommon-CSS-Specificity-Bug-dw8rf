@@ -1,0 +1,17 @@
+The following CSS code snippet demonstrates an uncommon error related to the specificity of CSS selectors and the cascading nature of style sheets:
+
+```css
+.container {
+  width: 200px;
+}
+
+#id-container {
+  width: 300px;
+}
+
+.container #id-container {
+  width: 100px; /* This rule is expected to override the others */
+}
+```
+
+The problem lies in the intended precedence of the last rule (".container #id-container"). It is expected to override the previous rules due to its higher specificity. However, the way the elements are nested leads to unpredictable behavior depending on the exact rendering context of the browser engine.
